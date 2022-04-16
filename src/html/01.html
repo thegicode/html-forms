@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        body {
+            margin:  2rem;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        h4 {
+            color: RoyalBlue;
+        }
+
+        ul {
+            margin-bottom: 5rem;
+        }
+
+        li::marker {
+            color: RoyalBlue;
+            
+        }
+
+        .attribute li {
+            padding: 1rem 0 3rem;
+            border-top: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Input Element</h1>
+
+
+
+<h2>유형: Type</h2>
+<ul>
+    <li>
+        <h4>text</h4>
+        <div>
+            <input type="text" name="a14">
+        </div>
+    </li>
+    <li>
+        <h4>search</h4>
+        <div>
+            <input type="search" name="a12">
+        </div>
+    </li>
+
+    <li>
+        <h4>number</h4>
+        <div>
+            <input type="number" name="a8">
+        </div>
+    </li>
+    <li>
+        <h4>tel</h4>
+        <div>
+            <input type="tel" name="a13">
+        </div>
+    </li>
+
+    <li>
+        <h4>url</h4>
+        <div>
+            <input type="url" name="a16">
+        </div>
+    </li>
+    <li>
+        <h4>email</h4>
+        <div>
+            <input type="email" name="a5">
+        </div>
+    </li>
+
+    <li>
+        <h4>password</h4>
+        <div>
+            <input type="password" name="a9">
+        </div>
+    </li>
+
+    <li>
+        <h4>checkbox</h4>
+        <div>
+            <label>
+                <input type="checkbox" name="a1">
+                선택 1
+            </label>
+            <label>
+                <input type="checkbox" name="a1">
+                선택 2
+            </label>
+            <label>
+                <input type="checkbox" name="a1">
+                선택 3
+            </label>
+        </div>
+    </li>
+    <li>
+        <h4>radio</h4>
+        <div>
+            <label>
+                <input type="radio" name="a10">
+                라디오 1
+            </label>
+            <label>
+                <input type="radio" name="a10">
+                라디오 2
+            </label>
+            <label>
+                <input type="radio" name="a10">
+                라디오 3
+            </label>
+        </div>
+    </li>
+
+
+
+    <li>
+        <h4>date</h4>
+        <p>Not Support: IE</p>
+        <div>
+            <input type="date" name="a3">
+        </div>
+    </li>
+    <li>
+        <h4>month</h4>
+        <p>Not Support: IE, Safari, Firefox</p>
+        <div>
+            <input type="month" name="a7">
+        </div>
+    </li>
+    <li>
+        <h4>week</h4>
+        <p>Not Support: IE, Safari, Firefox</p>
+        <div>
+            <input type="week" name="a17">
+        </div>
+    </li>
+    <li>
+        <h4>time</h4>
+        <p>Not Support: IE</p>
+        <div>
+            <input type="time" name="a15">
+        </div>
+    </li>
+    <li>
+        <h4>datetime-local</h4>
+        <p>Not Support: IE</p>
+        <div>
+            <input type="datetime-local" name="a4">
+        </div>
+    </li>
+
+    <li>
+        <h4>file</h4>
+        <div>
+            <input type="file" name="a6">
+        </div>
+    </li>
+
+    
+    <li>
+        <h4>range</h4>
+        <div>
+            <input type="range" name="a11">
+        </div>
+    </li>
+
+    <li>
+        <h4>color</h4>
+        <p>Not Support: IE</p>
+        <div>
+            <input type="color" name="a2">
+        </div>
+    </li>
+</ul>
+
+
+
+<h2>속성: Attribute</h2>
+<h3>모든 유형의 속성</h3>
+<ul class="attribute">
+    <li>
+        <h4>autofocus</h4>
+        <p>페이지가 로딩될때 양식 제어에 자동 포커스</p>
+        <div>
+            <input type="text" name="b2" autofocus>
+        </div>
+    </li>
+    <li>
+        <h4>autocomplete</h4>
+        <p>양식 자동생성 기능 (form autofill) 암시</p>
+        <div>
+            <h5>text</h5>
+            <form>
+                <input type="text" name="b1-a14" autocomplete>
+            </form>
+
+            <h5>search</h5>
+            <form>
+                <input type="search" name="b1-a12" autocomplete>
+            </form>
+            <h5>tel</h5>
+            <form>
+                <input type="tel" name="b1-a13" autocomplete>
+            </form>
+
+            <h5>url</h5>
+            <form>
+                <input type="url" name="b1-a16" autocomplete>
+            </form>
+
+            <h5>email</h5>
+            <form>
+                <input type="email" name="b1-a5" autocomplete>
+            </form>
+        </div>
+    </li>
+
+    <li>
+        <h4>disabled</h4>
+        <p>양식 비활성화</p>
+        <div>
+            <input type="text" name="b3" disabled>
+        </div>
+    </li>
+    <li>
+        <h4>form</h4>
+        <p>form 요소와 연결</p>
+        <div>
+            <form>
+                <input type="text" name="b4">
+            </form>
+        </div>
+    </li>
+   
+    <li>
+        <h4>name</h4>
+        <p>input 양식 컨트롤의 이름. <br>
+         이름/값 짝(name/value pair)의 일부로서 양식과 함께 전송</p>
+        <div>
+            <form>
+                <input type="text" name="b5">
+            </form>
+        </div>
+    </li>
+    <li>
+        <h4>type</h4>
+        <p>input 양식 유형<p>
+        <div>
+            <form>
+                <input type="text" name="b6">
+            </form>
+        </div>
+    </li>
+    <li>
+        <h4>value</h4>
+        <p>input 양식의 현재값, <br>
+            이름/값 짝(name/value pair)의 일부로서 양식과 함께 전송 <br>
+        </p>
+        <div>
+            <form>
+                <input type="text" name="b7" value="value">
+            </form>
+        </div>
+    </li>
+</ul>
+
+
+
+ <!-- <li>
+        <h4>list</h4>
+        <p>거의 모든 유형에 적용</p>
+        <div>
+            <input type="text" list="a5">
+            <datalist id="a5">
+                <option value="function">function</option>
+                <option value="async function">async function</option>
+                <option value="function*">generator function</option>
+                <option value="=>">arrow function</option>
+                <option value="async =>">async arrow function</option>
+                <option value="async function*">async generator function</option>
+            </datalist>
+        </div>
+    </li> -->
+
+    
+</body>
+</html>

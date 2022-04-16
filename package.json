@@ -1,0 +1,26 @@
+{
+  "name": "html-forms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server & npm run css",
+    "server": "node index",
+    "css": "npx sass --watch ./src/sass/:./src/css/ --style=compressed --source-map",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegicode/html-forms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thegicode/html-forms/issues"
+  },
+  "homepage": "https://github.com/thegicode/html-forms#readme",
+  "devDependencies": {
+    "express": "^4.17.3",
+    "sass": "^1.50.0"
+  }
+}
