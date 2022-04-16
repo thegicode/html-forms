@@ -135,38 +135,40 @@
 
     <li>
         <h4>date</h4>
-        <p>Not Support: IE</p>
         <div>
             <input type="date">
         </div>
+        <p>Not Support: IE</p>
+
     </li>
     <li>
         <h4>month</h4>
-        <p>Not Support: IE, Safari, Firefox</p>
         <div>
             <input type="month">
         </div>
+        <p>Not Support: IE, Safari, Firefox</p>
     </li>
     <li>
         <h4>week</h4>
-        <p>Not Support: IE, Safari, Firefox</p>
         <div>
             <input type="week">
         </div>
+        <p>Not Support: IE, Safari, Firefox</p>
     </li>
     <li>
         <h4>time</h4>
-        <p>Not Support: IE</p>
         <div>
             <input type="time">
         </div>
+        <p>Not Support: IE</p>
+
     </li>
     <li>
         <h4>datetime-local</h4>
-        <p>Not Support: IE</p>
         <div>
             <input type="datetime-local">
         </div>
+        <p>Not Support: IE</p>
     </li>
 
     <li>
@@ -186,17 +188,16 @@
 
     <li>
         <h4>color</h4>
-        <p>Not Support: IE</p>
         <div>
             <input type="color">
         </div>
+        <p>Not Support: IE</p>
     </li>
 </ul>
 
 
 
 <h2>속성: Attribute</h2>
-<h3>모든 유형의 속성</h3>
 <ul class="attribute">
     <li>
         <h4>autofocus</h4>
@@ -367,7 +368,7 @@
             </form>
         </div>
     </li>
-    <li>
+<!--     <li>
         <h4>type</h4>
         <p>input 양식 유형<p>
         <div>
@@ -375,7 +376,7 @@
                 <input type="text">
             </form>
         </div>
-    </li>
+    </li> -->
     <li>
         <h4>value</h4>
         <p>input 양식의 현재값, <br>
@@ -387,9 +388,6 @@
             </form>
         </div>
     </li>
-</ul>
-<h3>일부 유형의 속성</h3>
-<ul class="attribute">
     <li>
         <h4>list</h4>
         <p>text, search, url, tel, email, date, month, week, time, datetime-local, number, range, and color.</p>
@@ -445,8 +443,10 @@
             <div>
                 <input type="url"  list="b8-5">
                 <datalist id="b8-5">
-                    <option>http://daum.net</option>
-                    <option>http://naver.net</option>
+                    <option value="https://www.google.com/" label="Google">
+                    <option value="https://www.reddit.com/" label="Reddit">
+                    <option value="https://www.google.com/">Google</option>
+                    <option value="https://www.reddit.com/">Reddit</option>
                 </datalist>
             </div>
 
