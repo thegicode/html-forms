@@ -11,6 +11,8 @@
 
     <h2>Input type="text"</h2>
 
+    
+
     <h3>Default</h3>
     <form>
         <input type="text" value="봄날">
@@ -25,6 +27,10 @@
     </form>
 
 
+
+
+    <h3>Attributes</h3>
+
     <h4>required</h4>
     <form>
         <input type="text" name="required" class="input" required placeholder="키워드를 입력하세요.">
@@ -38,6 +44,39 @@
     </form>
 
 
+    <h4>maxlength, minlength</h4>
+    <form>
+        <p>minlength = 2, maxlength = 5</p>
+        <input type="text" name="minMax" class="input" minlength="2" maxlength="5" placeholder="2자리 이상, 5자리 이하">
+        <p>Validity : <span class="message"></span></p>
+        <script>
+            document.querySelector('[name=minMax]').addEventListener('input', event => {
+                const { target } = event
+                console.log(target.validity.valid)
+                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+            })
+        </script>
+    </form>
+
+
+
+    <h4>Datalist</h4>
+    <form>
+        <input type="text" class="input" list="list">
+        <datalist id="list">
+            <option value="function">function</option>
+            <option value="async function">async function</option>
+            <option value="function*">generator function</option>
+            <option value="async function*">async generator function</option>
+        </datalist>
+    </form>
+
+
+
+
+
+
+    <h3>Like Other Types</h3>
 
     <h4>Like Serach Type : 검색 아이콘, 키워드 지우기 버튼</h4>
     <form class="form-search">
@@ -137,37 +176,6 @@
         </script>
     </form>
 
-
-
-
-    <h4>Datalist</h4>
-    <form>
-        <input type="text" class="input" list="list">
-        <datalist id="list">
-            <option value="function">function</option>
-            <option value="async function">async function</option>
-            <option value="function*">generator function</option>
-            <option value="async function*">async generator function</option>
-        </datalist>
-    </form>
-
-
-
-
-
-    <h4>maxlength, minlength</h4>
-    <form>
-        <p>minlength = 2, maxlength = 5</p>
-        <input type="text" name="minMax" class="input" minlength="2" maxlength="5" placeholder="2자리 이상, 5자리 이하">
-        <p>Validity : <span class="message"></span></p>
-        <script>
-            document.querySelector('[name=minMax]').addEventListener('input', event => {
-                const { target } = event
-                console.log(target.validity.valid)
-                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
-            })
-        </script>
-    </form>
 
 
 
