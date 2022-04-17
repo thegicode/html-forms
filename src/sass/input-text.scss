@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+button {
+    cursor: pointer;
+}
+body {
+    margin: 1rem;
+}
+
+h3 {
+    margin-top: 3rem;
+    color: darkblue;
+}
+
+h4 {
+    margin: 2rem 0 10px;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+    color: RoyalBlue;
+}
+
+h5 {
+    margin-bottom: 10px;
+}
+
+
+.input {
+    width: 50%;
+    height: 45px;
+    padding: 0 1rem;
+    border-radius: 10px;
+    border: 1px solid #cddceb;
+    background-color: #edf6ff;
+    font-size: 1rem;
+    color: #333;
+    &:invalid {
+        border-color: red;
+        background-color: pink;
+    }
+}
+.form-search {
+    position: relative;
+    width: 50%;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 0 1rem 0 2rem;
+    }
+    .icon {
+        position: relative;
+        width: 20px;
+        margin-left: 10px;
+        
+        path {
+            fill: #666;
+        }
+    }
+    .cancel-button {
+        position: relative;
+        margin-right: 10px;
+        border: none;
+        background-color: transparent;
+        svg {
+            width: 17px;
+            path {
+                fill: #666;
+            }
+        }
+    }
+
+    input:not(:placeholder-shown) {
+        padding-right: 2rem;
+    }
+
+    input:placeholder-shown ~  .cancel-button {
+        display: none;
+    }
+}
+
+
+.form-numberActions {
+    display: flex;
+    gap: 5px;
+    button {
+        padding: 0 10px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        font-size: 2rem;
+        color: #666;
+    }
+    input {
+        width: 100px;
+        text-align: center;
+    }
+}
+
+
+
+

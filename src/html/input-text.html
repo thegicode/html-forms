@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Text Element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../css/input-text.css">
+</head>
+<body>
+
+    <h2>Input type="text"</h2>
+
+    <h3>Default</h3>
+    <form>
+        <input type="text" value="봄날">
+    </form>
+
+    <h3>Custom</h3>
+
+    <h4>CSS 커스텀</h4>
+    <form>
+        <p>width, height, padding, border, background-color, font size, font color...</p>
+        <input type="text" class="input" value="봄날">
+    </form>
+
+
+    <h4>required</h4>
+    <form>
+        <input type="text" name="required" class="input" required placeholder="키워드를 입력하세요.">
+        <p>Validity : <span class="message"></span></p>
+        <script>
+            document.querySelector('[name=required]').addEventListener('input', event => {
+                const { target } = event
+                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+            })
+        </script>
+    </form>
+
+
+
+    <h4>Like Serach Type : 검색 아이콘, 키워드 지우기 버튼</h4>
+    <form class="form-search">
+        <input type="text" name="search" class="input" placeholder="키워드를 입력하세요">
+        <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+        </svg>
+        <button type="reset" class="cancel-button">
+            <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+    </form>
+
+
+
+    <h4>Like Number Type: 증가 & 감소 버튼, 양수</h4>
+    <form class="form-numberActions">
+        <button type="button" class="decrease-button">-</button>
+        <input type="text" class="input" value="0" pattern="[0-9]+">
+        <button type="button" class="increase-button">+</button>
+        <script>
+            const numberInput = document.querySelector('.form-numberActions input')
+            let prevValue = numberInput.defaultValue
+            const numberValidate = () => {
+                const { value } = numberInput
+                if (numberInput.validity.valid === false) {
+                    numberInput.value = prevValue
+                } else {
+                    prevValue = value
+                }
+            }
+            numberInput.addEventListener('input', event => {
+                numberValidate()
+            })
+            document.querySelector('.decrease-button')
+                .addEventListener('click', () => {
+                    numberInput.value = Number(numberInput.value) - 1
+                    numberValidate()
+                })
+            document.querySelector('.increase-button')
+                .addEventListener('click', () => {
+                    numberInput.value = Number(numberInput.value) + 1
+                    numberValidate()
+                })
+        </script>
+    </form>
+
+
+
+
+    <h4>Like Email Type</h4>
+    <form class="form-email">
+        <input type="text" class="input" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+        <p>Validity : <span class="message"></span></p>
+        <script>
+            
+            document.querySelector('.form-email input').addEventListener('input', event => {
+                const { target } = event
+                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+            })
+
+        </script>
+    </form>
+
+
+
+
+    <h4>Like Tel Type</h4>
+    <form class="form-tel">
+        <input type="text" class="input" pattern="(^02|^0[0-9]{2})([0-9]+)?([0-9]{4})$">
+        <p>Validity : <span class="message"></span></p>
+        <script>
+            document.querySelector('.form-tel input').addEventListener('input', event => {
+                const { target } = event
+                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+            })
+
+        </script>
+    </form>
+
+
+
+
+    <h4>Datalist</h4>
+    <form>
+        <input type="text" class="input" list="list">
+        <datalist id="list">
+            <option value="function">function</option>
+            <option value="async function">async function</option>
+            <option value="function*">generator function</option>
+            <option value="async function*">async generator function</option>
+        </datalist>
+    </form>
+
+
+
+
+
+    <h4>maxlength, minlength</h4>
+    <form>
+        <p>minlength = 2, maxlength = 5</p>
+        <input type="text" name="minMax" class="input" minlength="2" maxlength="5" placeholder="2자리 이상, 5자리 이하">
+        <p>Validity : <span class="message"></span></p>
+        <script>
+            document.querySelector('[name=minMax]').addEventListener('input', event => {
+                const { target } = event
+                console.log(target.validity.valid)
+                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+            })
+        </script>
+    </form>
+
+
+
+</body>
+</html>
