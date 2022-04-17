@@ -5,19 +5,61 @@
     <title>Input Number Element</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="../css/input-text.css">
+    <link rel="stylesheet" href="../css/input-number.css">
 </head>
 <body>
 
     <h2>Input type="number"</h2>
 
     <h3>Default</h3>
-    <form>
+    <form class="form">
         <input type="number" value="123456">
+        <script>
+            document.querySelector('form input').addEventListener('change', (event) => {
+                console.log(event)
+            })
+        </script>
     </form>
 
 
-    <h3>Default</h3>
+    <h3>소수점 계산</h3>
+    <p>min = 0, max = 10, step = 1</p>
+    <form class="form-number">
+        <button type="button" class="decrease-button">-</button>
+        <input type="number" class="input" 
+            min="0" max="10" 
+            pattern="^\d*(\.\d{0,2})?$"
+            step=".01"
+            value="5.05" >
+        <button type="button" class="increase-button">+</button>
+        <script>
+            const numberInput = document.querySelector('.form-number input')
+            let prevValue = numberInput.defaultValue
+            const numberValidate = () => {
+                const { value } = numberInput
+                if (numberInput.validity.valid === false) {
+                    numberInput.value = prevValue
+                } else {
+                    prevValue = value
+                }
+            }
+            numberInput.addEventListener('input', event => {
+                numberValidate()
+            })
+            document.querySelector('.decrease-button')
+                .addEventListener('click', () => {
+                    numberInput.value = (Number(numberInput.value) - 1).toFixed(2)
+                    numberValidate()
+                })
+            document.querySelector('.increase-button')
+                .addEventListener('click', () => {
+                    numberInput.value = (Number(numberInput.value) + 1).toFixed(2)
+                    numberValidate()
+                })
+        </script>
+    </form>
+
+    <!-- pattern="[0-9]+([\,|\.][0-9]+)?" -->
     
 
 
