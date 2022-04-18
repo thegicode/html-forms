@@ -101,13 +101,13 @@
             const _likeNumbertype = () => {
                 const form = document.querySelector('.form-number')
                 const input = form.querySelector('input')
-                let temp = input.value
+                let _previous = input.value
                 input.addEventListener('input', () => {
-                    if (input.checkValidity()) {
-                        temp = input.value
-                    } else {
-                        input.value = temp
+                    if (input.checkValidity() === false) {
+                        input.value = _previous
+                        return
                     }
+                    _previous = input.value
                 })
             }
             _likeNumbertype()
