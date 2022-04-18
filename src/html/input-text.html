@@ -83,7 +83,7 @@
 
     <h3>Like Other Types</h3>
 
-    <h4>Like Serach Type : 검색 아이콘, 키워드 지우기 버튼</h4>
+    <h4>Serach : 검색 아이콘, 키워드 지우기 버튼</h4>
     <form class="form-search">
         <input type="text" name="search" class="input" placeholder="키워드를 입력하세요">
         <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
@@ -94,13 +94,28 @@
     </form>
 
 
-    <h4>Like Number Type: inputmode = number</h4>
+    <h4>Number</h4>
     <form class="form-number">
-        <input type="text" class="input" value="" inputmode="number" pattern="\d+">
+        <input type="text" class="input" value="" pattern="\d+">
+        <script>
+            const _likeNumbertype = () => {
+                const form = document.querySelector('.form-number')
+                const input = form.querySelector('input')
+                let temp = input.value
+                input.addEventListener('input', () => {
+                    if (input.checkValidity()) {
+                        temp = input.value
+                    } else {
+                        input.value = temp
+                    }
+                })
+            }
+            _likeNumbertype()
+        </script>
     </form>
 
 
-    <h4>Like Number Type: 증가 & 감소 버튼, 양수</h4>
+    <h4>Number : 증가 & 감소 버튼, 양수</h4>
     <form class="form-numberActions">
         <button type="button" class="decrease-button">-</button>
         <input type="text" class="input" value="0" pattern="\d+">
@@ -136,7 +151,7 @@
 
 
 
-    <h4>Like Email Type</h4>
+    <h4>Email</h4>
     <form class="form-email">
         <input type="text" class="input" 
             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" 
@@ -155,7 +170,7 @@
 
 
 
-    <h4>Like Tel Type</h4>
+    <h4>Tel</h4>
     <form class="form-tel">
         <input type="text" class="input" 
         maxlength="13" 
@@ -175,7 +190,7 @@
 
 
 
-    <h4>Like Url Type</h4>
+    <h4>Url</h4>
     <form class="form-url">
         <input type="text" class="input" 
         placeholder="https://example.com"

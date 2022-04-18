@@ -1,5 +1,5 @@
 {
-  "name": "html-forms",
+  "name": "htmls",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thegicode/html-forms.git"
+    "url": "git+https://github.com/thegicode/htmls.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thegicode/html-forms/issues"
+    "url": "https://github.com/thegicode/htmls/issues"
   },
-  "homepage": "https://github.com/thegicode/html-forms#readme",
+  "homepage": "https://github.com/thegicode/htmls#readme",
   "devDependencies": {
     "express": "^4.17.3",
     "sass": "^1.50.0"
