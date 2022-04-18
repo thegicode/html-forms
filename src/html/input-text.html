@@ -96,7 +96,7 @@
 
     <h4>Number</h4>
     <form class="form-number">
-        <input type="text" class="input" value="" pattern="\d+">
+        <input type="text" class="input" value="" pattern="\d+" placeholder="숫자를 입력하세요">
         <script>
             const _likeNumbertype = () => {
                 const form = document.querySelector('.form-number')
@@ -117,8 +117,8 @@
 
     <h4>Number : 증가 & 감소 버튼, 양수</h4>
     <form class="form-numberActions">
-        <button type="button" class="decrease-button">-</button>
         <input type="text" class="input" value="0" pattern="\d+">
+        <button type="button" class="decrease-button">-</button>
         <button type="button" class="increase-button">+</button>
         <script>
             const numberInput = document.querySelector('.form-numberActions input')
