@@ -800,7 +800,24 @@
                 _validForm()
             </script>
         </form>
+    </li>
 
+    <li>
+        <h4>validationMessage</h4>
+        <form class="validationMessage">
+            <input type="text" name="number" pattern="\d+" placeholder="숫자만 입력하세요." >
+            <p><span></span></p>
+        </form>
+        <script>
+            const _validationMessage = () => {
+                const form = document.querySelector('.validationMessage')
+                const input = form.querySelector('input')
+                input.addEventListener('input', () => {
+                    form.querySelector('span').textContent = input.validationMessage
+                })
+            }
+            _validationMessage()
+        </script>
     </li>
 
     <li>
