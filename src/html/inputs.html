@@ -764,6 +764,46 @@
     </li>
 
     <li>
+        <h4>validityState</h4>
+        <form class="validForm">
+            <input type="text" pattern="\d+" required placeholder="숫자를 입력하세요.">
+            <dl class="support">
+                <dt>Not Supported :</dt> 
+                <dd>IE : badInput, tooShort</dd>
+            </dl>
+            <div></div>
+            <style>
+                .validForm div {
+                    padding: 0 1rem;
+                    border-radius: 10px;
+                    border: 1px solid #ddd;
+                    background-color: #f8f8f8;
+                }
+            </style>
+            <script>
+                const _validForm = () => {
+                    const form = document.querySelector('.validForm')
+                    const input = form.querySelector('input')
+                    const div = form.querySelector('div')
+                    const fragment = new DocumentFragment()
+                    input.addEventListener('input', () => {
+                        const validityState = input.validity
+                        div.innerHTML  = ''
+                        for (const key in validityState) {
+                            const t = document.createElement('p')
+                            t.textContent = `- ${key}: ${validityState[key]}`
+                            fragment.appendChild(t)
+                        }
+                        div.appendChild(fragment)
+                    })
+                }
+                _validForm()
+            </script>
+        </form>
+
+    </li>
+
+    <li>
         <h4>inputmode</h4>
         <p>none, text(기본값), decimal, numeric, tel, search, email, url </p>
         <p>Not Support: IE, Safari</p>
