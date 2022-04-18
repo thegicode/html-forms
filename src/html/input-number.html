@@ -19,38 +19,45 @@
 
     <h3>소수점 계산</h3>
     <p>min = 0, max = 10, step = 1</p>
-    <form class="form-number">
+    <form class="form-step">
         <button type="button" class="decrease-button">-</button>
         <input type="number" class="input" 
             min="0" max="10" 
             pattern="^\d*(\.\d{0,2})?$"
-            step=".01"
+            step = '.01'
             value="5.05" >
         <button type="button" class="increase-button">+</button>
         <script>
-            const numberInput = document.querySelector('.form-number input')
-            let prevValue = numberInput.defaultValue
-            const numberValidate = () => {
-                const { value } = numberInput
-                if (numberInput.validity.valid === false) {
-                    numberInput.value = prevValue
-                } else {
-                    prevValue = value
+            const step = () => {
+                const form = document.querySelector('.form-step')
+                const input = form.querySelector('input')
+                const upButton = document.querySelector('.increase-button')
+                const downButton = document.querySelector('.decrease-button')
+
+                let prevValue = input.defaultValue
+                const numberValidate = () => {
+                    const { value } = input
+                    if (input.validity.valid === false) {
+                        input.value = prevValue
+                    } else {
+                        prevValue = value
+                    }
                 }
+                input.addEventListener('input', event => {
+                    numberValidate()
+                })
+                upButton.addEventListener('click', () => {
+                    input.value = (Number(input.value) + 1).toFixed(2)
+                    // input.stepUp(1)
+                    numberValidate()
+                })
+                downButton.addEventListener('click', () => {
+                    input.value = (Number(input.value) - 1).toFixed(2)
+                    // input.stepDown(1)
+                    numberValidate()
+                })
             }
-            numberInput.addEventListener('input', event => {
-                numberValidate()
-            })
-            document.querySelector('.decrease-button')
-                .addEventListener('click', () => {
-                    numberInput.value = (Number(numberInput.value) - 1).toFixed(2)
-                    numberValidate()
-                })
-            document.querySelector('.increase-button')
-                .addEventListener('click', () => {
-                    numberInput.value = (Number(numberInput.value) + 1).toFixed(2)
-                    numberValidate()
-                })
+            step()
         </script>
     </form>
 

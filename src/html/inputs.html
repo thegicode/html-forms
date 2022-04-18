@@ -806,7 +806,7 @@
         <h4>validationMessage</h4>
         <form class="validationMessage">
             <input type="text" name="number" pattern="\d+" placeholder="숫자만 입력하세요." >
-            <p><span></span></p>
+            <p>validationMessage : <span></span></p>
         </form>
         <script>
             const _validationMessage = () => {
@@ -819,6 +819,24 @@
             _validationMessage()
         </script>
     </li>
+
+   <!--  <li>
+        <h4>willValidate</h4>
+        <form class="willValidate">
+            <input type="text" name="text" >
+            <p>willValidate : <span></span></p>
+        </form>
+        <script>
+            const _willValidate = () => {
+                const form = document.querySelector('.willValidate')
+                const input = form.querySelector('input')
+                input.addEventListener('input', () => {
+                    form.querySelector('span').textContent = input.willValidate
+                })
+            }
+            _willValidate()
+        </script>
+    </li> -->
 
     <li>
         <h4>inputmode</h4>
