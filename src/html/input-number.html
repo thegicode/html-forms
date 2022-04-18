@@ -35,26 +35,26 @@
                 const downButton = document.querySelector('.decrease-button')
 
                 let prevValue = input.defaultValue
-                const numberValidate = () => {
+                const setValue = () => {
                     const { value } = input
-                    if (input.validity.valid === false) {
+                    if (input.checkValidity() === false) {
                         input.value = prevValue
                     } else {
                         prevValue = value
                     }
                 }
                 input.addEventListener('input', event => {
-                    numberValidate()
+                    setValue()
                 })
                 upButton.addEventListener('click', () => {
                     input.value = (Number(input.value) + 1).toFixed(2)
                     // input.stepUp(1)
-                    numberValidate()
+                    setValue()
                 })
                 downButton.addEventListener('click', () => {
                     input.value = (Number(input.value) - 1).toFixed(2)
                     // input.stepDown(1)
-                    numberValidate()
+                    setValue()
                 })
             }
             step()
