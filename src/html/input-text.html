@@ -38,7 +38,8 @@
         <script>
             document.querySelector('[name=required]').addEventListener('input', event => {
                 const { target } = event
-                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+                target.nextElementSibling.querySelector('.message').textContent = target.checkValidity()
+                // target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
             })
         </script>
     </form>
@@ -53,7 +54,8 @@
             document.querySelector('[name=minMax]').addEventListener('input', event => {
                 const { target } = event
                 console.log(target.validity.valid)
-                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+                target.nextElementSibling.querySelector('.message').textContent = target.checkValidity()
+                // target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
             })
         </script>
     </form>
@@ -108,7 +110,8 @@
             let prevValue = numberInput.defaultValue
             const numberValidate = () => {
                 const { value } = numberInput
-                if (numberInput.validity.valid === false) {
+                // if (numberInput.validity.valid === false) {
+                if (numberInput.checkValidity() === false) {
                     numberInput.value = prevValue
                 } else {
                     prevValue = value
@@ -142,7 +145,8 @@
         <script>
             document.querySelector('.form-email input').addEventListener('input', event => {
                 const { target } = event
-                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+                target.nextElementSibling.querySelector('.message').textContent = target.checkValidity()
+                // target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
             })
 
         </script>
@@ -161,7 +165,8 @@
         <script>
             document.querySelector('.form-tel input').addEventListener('input', event => {
                 const { target } = event
-                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+                target.nextElementSibling.querySelector('.message').textContent = target.checkValidity()
+                // target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
             })
         </script>
     </form>
@@ -179,7 +184,8 @@
         <script>
             document.querySelector('.form-url input').addEventListener('input', event => {
                 const { target } = event
-                target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
+                target.nextElementSibling.querySelector('.message').textContent = target.checkValidity()
+                // target.nextElementSibling.querySelector('.message').textContent = target.validity.valid
             })
         </script>
     </form>

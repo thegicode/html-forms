@@ -53,6 +53,9 @@
             font-size: 14px; 
             color: gray;
         }
+        .support dd {
+            margin-left: 1rem;
+        }
 
     </style>
 </head>
@@ -61,6 +64,92 @@
 <h1>Input Element Methods</h1>
 
 <ul>
+    <li>
+        <h3>checkValidity()</h3>
+        <form class="checkValidity">
+            <input type="text" name="number" pattern="\d+" placeholder="숫자만 입력하세요." >
+            <p>CheckValidity(): <span></span></p>
+        </form>
+        <script>
+            const _checkValidity = () => {
+                const form = document.querySelector('.checkValidity')
+                const input = form.querySelector('input')
+                input.addEventListener('input', () => {
+                    const validity = input.checkValidity()
+                    form.querySelector('span').textContent = validity
+                })
+            }
+            _checkValidity()
+        </script>
+    </li>
+    <li>
+        <h3>reportValidity()</h3>
+        <form class="reportValidity">
+            <input type="text" name="number" pattern="\d+" placeholder="숫자만 입력하세요.">
+            <p>ReportValidity(): <span></span></p>
+        </form>
+        <dl class="support">
+            <dt>Not Supported :</dt> 
+            <dd>IE</dd>
+        </dl>
+        <script>
+            const _reportValidity = () => {
+                const form = document.querySelector('.reportValidity')
+                const input = form.querySelector('input')
+                input.addEventListener('input', () => {
+                    const validity = input.reportValidity()
+                    form.querySelector('span').textContent = validity
+                })
+            }
+            _reportValidity()
+        </script>
+    </li>
+    <li>
+        <h3>setCustomValidity()</h3>
+        <form class="setCustomValidity">
+            <input type="text" name="number" pattern="\d+" placeholder="숫자만 입력하세요." required>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+
+            const _setCustomValidity = () => {
+                const form = document.querySelector('.setCustomValidity')
+                const input = form.querySelector('input')
+                const _customValidity = () => {
+                    const validityState = input.validity
+                    if (validityState.valueMissing) {
+                        input.setCustomValidity('[custom] 이 입력란을 채우세요.')
+                    }
+                    if (validityState.patternMismatch) {
+                        input.setCustomValidity('[custom] 숫자를 입력하세요')
+                    }
+                    input.reportValidity()
+                }
+
+                _customValidity()
+
+                input.addEventListener('input', () => {
+                    _customValidity()
+                })
+                form.addEventListener('submit', event => {
+                    event.preventDefault()
+                })
+            }
+            _setCustomValidity()
+            // badInput: false
+            // customError: false
+            // patternMismatch: true
+            // rangeOverflow: false
+            // rangeUnderflow: false
+            // stepMismatch: false
+            // tooLong: false
+            // tooShort: false
+            // typeMismatch: false
+            // valid: false
+            // valueMissing: false
+        </script>
+    </li>
     <li>
         <h3>select()</h3>
         <dl>
@@ -81,11 +170,11 @@
                 File Upload</dd>
         </dl>
         <form>
-            <input type="text" name="select" class="select-sm" value="어린 은행나무 가지에 올라온 연두빛 아기 잎사귀들" >
+            <input type="text" name="select" class="select" value="어린 은행나무 가지에 올라온 연두빛 아기 잎사귀들" >
         </form>
         <script>
             const _select = () => {
-                document.querySelector('.select-sm').select()
+                document.querySelector('.select').select()
             }
             // _select()
         </script>
